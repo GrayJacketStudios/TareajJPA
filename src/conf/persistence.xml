@@ -5,11 +5,4 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>
-  <persistence-unit name="TareaJPAPU2" transaction-type="JTA">
-    <jta-data-source>JNDI_PETS_2018</jta-data-source>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
-    </properties>
-  </persistence-unit>
 </persistence>
