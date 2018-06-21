@@ -7,11 +7,28 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+    <%@include file="layout/header.jsp" %>
     <body>
-        <h1>Hello World!</h1>
+    <%@include file="layout/menu.jsp" %>
+
+        <div class="row">
+            <div class="col m12">
+              <div class="card green lighten-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Pacani Pet Shop</span>
+                  <p>Bienvenido a Pacani Pet Shop, un lugar donde podras encontrar diferentes mascotas y productos!</p>
+                  <br>
+                  <center>
+                  <img src="img/labrador.jpg" class="circle" height="300px">
+                  </center>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+    
+    
     </body>
+    <%@include file="layout/footer.jsp" %>
 </html>

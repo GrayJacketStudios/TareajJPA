@@ -14,8 +14,7 @@ import javax.ejb.Local;
  * @author Informatica
  */
 @Local
-public interface ServicioBeanLocal {
-
+public interface ServicioLocalLocal {
     List<Perfil> getPerfiles();
 
     List<Producto> getProductos();
@@ -25,5 +24,4 @@ public interface ServicioBeanLocal {
     Producto buscar(int id);
 
     Perfil buscarPerfil(int id);
-    
 }
