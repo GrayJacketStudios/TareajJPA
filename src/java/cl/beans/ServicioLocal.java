@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class ServicioLocal implements ServicioLocalLocal {
-    /*
+    
     @PersistenceContext(unitName = "TareaJPAPU")
     private EntityManager em;
 
@@ -51,5 +51,5 @@ public class ServicioLocal implements ServicioLocalLocal {
     public Perfil buscarPerfil(int id) {
         return null;
     }
-*/
+
 }
