@@ -34,7 +34,7 @@ public class ServicioLocal implements ServicioLocalLocal {
 
     @Override
     public List<Producto> getProductos() {
-        return em.createQuery("Select p from Producto p").getResultList();
+        return em.createQuery("select p from Producto p").getResultList();
     }
 
     @Override

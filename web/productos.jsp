@@ -1,19 +1,20 @@
-<%@page import="cl.entidades.Producto"%>
-<%@page import="javax.naming.InitialContext"%>
-<%@page import="cl.beans.ServicioLocalLocal"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <%@include file="layout/header.jsp" %>
     <body>
     <%@include file="layout/menu.jsp" %>
     
-    <%! ServicioLocalLocal servicio; %>
+    <%@page import="javax.naming.InitialContext"%>
+    <%@page import="cl.beans.ServicioLocalLocal"%>
+    <%@page contentType="text/html" pageEncoding="UTF-8"%>
+    
+    <%!private ServicioLocalLocal servicio; %>
 <%
   InitialContext ctx=new InitialContext();
   servicio=(ServicioLocalLocal)ctx.lookup("java:global/TareaJPA/ServicioLocal!cl.beans.ServicioLocalLocal");
 %>
-<c:set var="servicio" scope="page" value="<%=servicio%>"/>
+<c:set var="productos" scope="page" value="<%=servicio.getProductos()%>"/>
 
 
     <div class="container">
@@ -31,13 +32,15 @@
                                     <th>Descripción</th>
                                     <th>Precio</th>
                                     <th>Cantidad</th>
+                                    <th>Categoria</th>
                                 </tr>
-                                <c:forEach items="${servicio.getProductos}" var="p" >
+                                <c:forEach items="${pageScope.productos}" var="p" >
                                     <tr>
                                         <td>${p.nombreProducto}</td>
                                         <td>${p.descripcionProducto}</td>
                                         <td>${p.precioProducto}</td>
                                         <td>${p.unidadesProducto}</td>
+                                        <td>${p.categoria.nombreCategoria}</td>
                                     </tr>
                                 </c:forEach>
                             </table>
