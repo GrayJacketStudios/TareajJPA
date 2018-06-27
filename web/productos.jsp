@@ -28,19 +28,21 @@
 
                             <table class="bordered highlight">
                                 <tr>
+                                    <th>Categoria</th>
                                     <th>Nombre</th>
                                     <th>Descripción</th>
                                     <th>Precio</th>
                                     <th>Cantidad</th>
-                                    <th>Categoria</th>
+                                    
                                 </tr>
                                 <c:forEach items="${pageScope.productos}" var="p" >
                                     <tr>
+                                        <td>${p.categoria.nombreCategoria}</td>
                                         <td>${p.nombreProducto}</td>
                                         <td>${p.descripcionProducto}</td>
                                         <td>${p.precioProducto}</td>
                                         <td>${p.unidadesProducto}</td>
-                                        <td>${p.categoria.nombreCategoria}</td>
+                                        
                                     </tr>
                                 </c:forEach>
                             </table>

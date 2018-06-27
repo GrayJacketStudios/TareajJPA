@@ -52,4 +52,30 @@ public class ServicioLocal implements ServicioLocalLocal {
         return null;
     }
 
+    @Override
+    public Usuario iniciarSesion(String rut, String clave) {
+        try{
+            return (Usuario) em.createNamedQuery("Usuario.iniciarSesion", Usuario.class)
+                    .setParameter("rutUser", rut)
+                    .setParameter("clave", clave)
+                    .getSingleResult();
+        }catch(Exception e){
+            return null;
+        }
+        
+    }
+
+    @Override
+    public Usuario buscarUsuario(String rut) {
+        return em.find(Usuario.class, rut);
+    }
+
+    @Override
+    public void guardar(Object object) {
+        em.persist(object);
+    }
+    
+    
+    
+
 }

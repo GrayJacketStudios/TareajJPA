@@ -24,4 +24,10 @@ public interface ServicioLocalLocal {
     Producto buscar(int id);
 
     Perfil buscarPerfil(int id);
+
+    Usuario iniciarSesion(String rut, String clave);
+
+    Usuario buscarUsuario(String rut);
+
+    void guardar(Object object);
 }
