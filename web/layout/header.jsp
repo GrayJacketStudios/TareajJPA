@@ -1,3 +1,4 @@
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,3 +15,13 @@
  
     </head>
     
+    
+    <%@page import="cl.beans.ServicioLocalLocal"%>
+    <%@page import="javax.naming.InitialContext" %>    
+    <%! private ServicioLocalLocal servicio; %>
+
+    <%
+        InitialContext ctx = new InitialContext();
+        servicio = (ServicioLocalLocal)ctx.lookup("java:global/TareaJPA/ServicioLocal!cl.beans.ServicioLocalLocal");
+
+    %>
