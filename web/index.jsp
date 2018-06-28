@@ -16,11 +16,11 @@
         <h4 class="center-align">Ingreso</h4>
         <form method="post" action="control.do">
             <div class="input-field col s12">
-                <input id="rut" type="text" class="validate">
+                <input id="rut" type="text" class="validate" name="rut">
                 <label for="rut">Rut</label>
             </div>
             <div class="input-field col s12">
-                <input id="clave" type="password" class="validate">
+                <input id="clave" type="password" class="validate" name="clave">
                 <label for="clave">Contraseña</label>
             </div>
             <button class="btn center" name="boton" value="login">Entrar</button>

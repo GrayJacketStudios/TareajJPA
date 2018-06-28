@@ -25,8 +25,6 @@
               <li><a href="admin_ventas.jsp">carrito de compras</a> </li>
               <li><a href="salir.jsp">Salir</a> </li>
           </c:if>     
-          <li><a href="index.jsp">Inicio</a></li>
-        <li><a href="productos.jsp">Productos</a></li>
 
       </ul>
     </div>

@@ -6,6 +6,9 @@
 package cl.beans;
 
 import cl.entidades.*;
+import cl.utils.*;
+import directorio.Hash;
+
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -49,7 +52,7 @@ public class ServicioLocal implements ServicioLocalLocal {
 
     @Override
     public Perfil buscarPerfil(int id) {
-        return null;
+        return (Perfil) em.createQuery("SELECT p FROM Perfil p WHERE p.idPerfil = "+id).getSingleResult();
     }
 
     @Override
@@ -57,7 +60,7 @@ public class ServicioLocal implements ServicioLocalLocal {
         try{
             return (Usuario) em.createNamedQuery("Usuario.iniciarSesion", Usuario.class)
                     .setParameter("rutUser", rut)
-                    .setParameter("clave", clave)
+                    .setParameter("clave", Hash.md5(clave))
                     .getSingleResult();
         }catch(Exception e){
             return null;
